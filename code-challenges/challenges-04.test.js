@@ -76,6 +76,9 @@ const isCapitalized = (str) => {
   } else {
     return [];
   }
+  // const pattern = /[A-Z][A-Za-z]*/g; 
+  // const matchedWord = str.match(pattern)
+  // return matchedWord ? matchedWord : [];
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -86,14 +89,25 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
-  const newArr = [];
-  const regex = /\b\w*[A-J]\w*/g;
-  for (let i = 0; i < arr.length; i++) {
-    if (regex.test(arr[i])) {
-      newArr.push(arr[i]);
+  
+  // const newArr = [];
+  // const regex = /\b\w*[A-J]\w*/g;
+  // for (let i = 0; i < arr.length; i++) {
+  //   if (regex.test(arr[i])) {
+  //     newArr.push(arr[i]);
+  //   }
+  // }
+  // return newArr;
+
+  const pattern = /^[A-J]/;
+  const returnArr = [];
+  arr.forEach((city) => {
+    if (pattern.test(city)) {
+      returnArr.push(city);
     }
-  }
-  return newArr;
+  });
+  console.log(returnArr);
+  return returnArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
