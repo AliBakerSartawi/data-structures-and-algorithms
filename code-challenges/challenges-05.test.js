@@ -148,6 +148,13 @@ const listFoods = (recipe) => {
     let ingredientStartingIndex = element.indexOf(' ', 4) + 1;
     result.push(element.slice(ingredientStartingIndex));
   });
+  
+  /////another more professional way to solve
+  // let str = '1 medium-sized Gruffalo';
+  // let str2 = str.slice(str.indexOf(' ')+1); equals to 'medium-sized Gruffalo';
+  // let str3 = str2.slice(str2.indexOf(' ')+1);
+  // console.log(str3);
+
   return result;
 };
 
