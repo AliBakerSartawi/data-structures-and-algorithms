@@ -181,18 +181,32 @@ const hasChildrenValues = (arr, character) => {
   //     }
   //   });
   // });
+  
+  // arr.forEach(obj => {
+  //   if (obj.name === character) {
+  //     const values = Object.values(obj);
+  //     console.log(values[2].length);
+  //     if (values[2].length !== 0) {
+  //       // console.log(true);
+  //       return true;
+  //     }
+  //   }
+  // });
 
-  arr.forEach(obj => {
-    if (obj.name === character) {
-      const values = Object.values(obj);
-      console.log(values[2].length);
-      if (values[2].length !== 0) {
-        // console.log(true);
-        return true;
-      }
+  let returnValue = 0;
+
+  arr.forEach(arrChar => {
+    if (arrChar.name === character) {
+      // if (Object.values(arrChar)[2].length > 0) {
+      //   return 1;
+      // } else {
+      //   return 0;
+      // }
+      Object.values(arrChar)[2].length ? returnValue=true : returnValue=false;
     }
+    // return 0; //in case we didnt find any character name
   });
-
+  return returnValue; //forEach loop will never return, we need an outside variable
 };
 
 /* ------------------------------------------------------------------------------------------------
