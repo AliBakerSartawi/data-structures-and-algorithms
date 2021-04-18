@@ -391,6 +391,39 @@ You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
 
 const sortSchedule = (arr) => {
   // Solution code here...
+  const sorter = {
+    'monday': 1,
+    'tuesday': 2,
+    'wednesday': 3,
+    'thursday': 4,
+    'friday': 5,
+    'saturday': 6,
+    'sunday': 7
+  };
+  function compareFunc(a, b) {
+    const x = a.dayOfWeek.toLowerCase();
+    const y = b.dayOfWeek.toLowerCase();
+    if(a.dayOfWeek !== b.dayOfWeek) {
+      if(sorter[x] < sorter[y]) {
+        return -1;
+      }
+      if(sorter[x] > sorter[y]) {
+        return 1;
+      }
+      return 0;
+    } else if(a.dayOfWeek === b.dayOfWeek) {
+      const x = a.end - a.start;
+      const y = b.end - b.start;
+      if(x < y) {
+        return -1;
+      }
+      if(x > y) {
+        return 1;
+      }
+      return 0;
+    }
+  }
+  return arr.sort(compareFunc);
 };
 
 /* ------------------------------------------------------------------------------------------------
