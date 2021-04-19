@@ -56,7 +56,7 @@ let characters = [
 
 const sortByChildren = (charArray) => {
   // Solution code here...
-  const keys = Object.keys(charArray);
+  // const keys = Object.keys(charArray);
 
   function compareFunc(a, b) {
     let x = a.children.length;
@@ -166,45 +166,13 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
-
-  // arr.forEach(obj => {
-  //   const values = Object.values(obj);
-  //   values.forEach(value => {
-  //     if (value === character) {
-  //       if (obj.children.length !== 0) {
-  //         return true;
-  //       } else {
-  //         return false;
-  //       }
-  //     } else {
-  //       return false;
-  //     }
-  //   });
-  // });
-  
-  // arr.forEach(obj => {
-  //   if (obj.name === character) {
-  //     const values = Object.values(obj);
-  //     console.log(values[2].length);
-  //     if (values[2].length !== 0) {
-  //       // console.log(true);
-  //       return true;
-  //     }
-  //   }
-  // });
-
   let returnValue = 0;
 
   arr.forEach(arrChar => {
     if (arrChar.name === character) {
-      // if (Object.values(arrChar)[2].length > 0) {
-      //   return 1;
-      // } else {
-      //   return 0;
-      // }
       Object.values(arrChar)[2].length ? returnValue=true : returnValue=false;
     }
-    // return 0; //in case we didnt find any character name
+    // return 0; //in case we did not find any character name
   });
   return returnValue; //forEach loop will never return, we need an outside variable
 };
@@ -219,6 +187,14 @@ The input and output of this function are the same as the input and output from 
 
 const hasChildrenEntries = (arr, character) => {
   // Solution code here...
+  let returnValue = 0;
+
+  arr.forEach(char => {
+    if (char.name === character) {
+      Object.entries(char)[2][1].length ? returnValue = true : returnValue = false;
+    }
+  });
+  return returnValue;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -229,6 +205,13 @@ Write a function named totalCharacters that takes in an array and returns the nu
 
 const totalCharacters = (arr) => {
   // Solution code here...
+  let count = 0;
+  arr.forEach(char => {
+    char.name ? count += 1 : 0;
+    char.spouse ? count += 1 : 0;
+    char.children.length ? count += char.children.length : 0;
+  });
+  return count;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -244,6 +227,10 @@ For example: [{ house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, ..
 const houseSize = (arr) => {
   const sizes = [];
   // Solution code here...
+  arr.forEach(char => {
+    let members = 1 + char.children.length + (char.spouse ? 1 : 0);
+    sizes.push({ house: char.house, members: members });
+  });
   return sizes;
 };
 
@@ -268,6 +255,10 @@ const deceasedSpouses = ['Catelyn', 'Lysa', 'Robert', 'Khal Drogo', 'Alerie'];
 const houseSurvivors = (arr) => {
   const survivors = [];
   // Solution code here...
+  arr.forEach(char => {
+    let members = 1 + char.children.length;
+    survivors.push({ house: char.house, members: members });
+  });
   return survivors;
 };
 
@@ -335,7 +326,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return true for characters that have children', () => {
     expect(hasChildrenEntries(characters, 'Eddard')).toBeTruthy();
   });
@@ -345,20 +336,20 @@ xdescribe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return the number of characters in the array', () => {
     expect(totalCharacters(characters)).toStrictEqual(26);
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should return an object for each house containing the name and size', () => {
     expect(houseSize(characters)[1]).toStrictEqual({ house: 'Snow', members: 1 });
     expect(houseSize(characters).length).toStrictEqual(7);
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should not include any deceased spouses', () => {
     expect(houseSurvivors(characters)).toStrictEqual([{ house: 'Greyjoy', members: 1 }, { house: 'Snow', members: 1 }, { house: 'Arryn', members: 2 }, { house: 'Tyrell', members: 3 }, { house: 'Lannister', members: 4 }, { house: 'Targaryen', members: 4 }, { house: 'Stark', members: 6 }]);
   });
