@@ -181,6 +181,7 @@ The top row of the board is considered row zero and row numbers increase as they
 
 const battleship = (board, row, col) => {
   //  Solution code here...
+  return board[row][col] === '#' ? 'hit' : 'miss';
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -193,6 +194,13 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 
 const calculateProduct = (numbers) => {
   // Solution code here...
+  return numbers.reduce((acc, val) => {
+    if (val.length > 0) {
+      val = val.reduce((acc, val) => acc = acc * val);
+      acc = acc * val;
+    }
+    return acc;
+  }, 1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -213,6 +221,14 @@ const weeklyTemperatures = [
 
 const averageDailyTemperature = (weather) => {
   // Solution code here...
+  return weather.reduce((acc, val) => {
+    val = val.reduce((accTwo, valTwo) => {
+      accTwo += valTwo;
+      return accTwo;
+    });
+    acc += val;
+    return acc;
+  }, 0) / (weather.length * 7);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -318,7 +334,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   const battleshipData = [
     ['#', ' ', '#', ' '],
     ['#', ' ', '#', ' '],
@@ -337,7 +353,7 @@ xdescribe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should multiply all the numbers together', () => {
     expect(calculateProduct([[1, 2], [3, 4], [5, 6]])).toStrictEqual(720);
   });
@@ -350,7 +366,7 @@ xdescribe('Testing challenge 8', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should calculate and return the average temperature of the data set', () => {
     expect(averageDailyTemperature(weeklyTemperatures)).toStrictEqual(60.25);
   });
