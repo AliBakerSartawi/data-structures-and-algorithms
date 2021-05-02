@@ -10,6 +10,23 @@ Under the `data-structures-and-algorithms` repository, at the top level is a fol
 
 Each day, you'll add one new file to this folder to do your work for the day's assigned code challenge
 
+---
+
 ### 401 Data Structures, Code Challenges
 
-- Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
+---
+
+[**Reverse an Array**](./code-challenges/arrayReverse/array-reverse.test.js)
+
+**Challenge**: Array should be reversed without utilizing built-in methods, while applying our own testing code
+
+**Approach & Efficiency**: I tried using the most basic code; a basic for loop and unshifting the values
+
+**Solution**:
+
+*run: npm test array-reverse*
+
+![arrayReverse img](./assets/array-reverse.jpg)
+
+
+
