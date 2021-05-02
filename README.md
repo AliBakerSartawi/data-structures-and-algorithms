@@ -16,7 +16,7 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 
 ---
 
-**Reverse an Array**
+[**Reverse an Array**](./code-challenges/arrayReverse/array-reverse.test.js)
 
 **Challenge**: Array should be reversed without utilizing built-in methods, while applying our own testing code
 
@@ -26,6 +26,7 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 
 *run: npm test array-reverse*
 
-![arrayReverse img](./imgs/reverse-arr.jpg)
+![arrayReverse img](./assets/array-reverse.jpg)
+
 
 
