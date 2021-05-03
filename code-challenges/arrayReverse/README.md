@@ -4,7 +4,7 @@
 
 **Challenge**: Array should be reversed without utilizing built-in methods, while applying our own testing code
 
-**Approach & Efficiency**: I tried using the most basic code; a basic for loop and unshifting the values
+**Approach & Efficiency**: I copied the array by value not reference so that the original array stays immutable, then I reassigned the values of the new array by index in a for loop as such `reversedArr[i] = arr[arr.length - (i + 1)]`, so that the values are reversed.
 
 **Solution**:
 
