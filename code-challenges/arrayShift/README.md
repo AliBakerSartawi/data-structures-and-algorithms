@@ -10,4 +10,4 @@
 
 *run: npm test array-shift*
 
-<!-- ![arrayReverse img](../../assets/array-reverse.jpg) -->
+![arrayReverse img](../../assets/array-shift.jpg)
