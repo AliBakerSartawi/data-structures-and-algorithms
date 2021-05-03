@@ -1,6 +1,6 @@
 # Array Reverse
 
-[**Reverse an Array**](./array-reverse.test.js)
+[**Reverse an Array**](./array-reverse.js)
 
 **Challenge**: Array should be reversed without utilizing built-in methods, while applying our own testing code
 
