@@ -14,9 +14,9 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 
 ## 401 Data Structures, Code Challenges
 
-### Code Challenge 01: [**Array-reverse**](./code-challenges/arrayReverse/array-reverse.js)
-
-### Code Challenge 02: [**Array-shift**](./code-challenges/arrayShift/array-shift.js)
-
+| No  | Topic                  | URL                             |
+| --- | ---                    | ---                             |
+| 1   | arrayReverse           | [Reverse an Array](./code-challenges/arrayReverse/array-reverse.js)|
+| 2   | arrayShift             | [Insert Shift Array](./code-challenges/arrayShift/array-shift.js)|
 
 
