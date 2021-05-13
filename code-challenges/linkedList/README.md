@@ -1,13 +1,13 @@
-# Array Shift
+# Linked List
 
-[**Insert Value In Middle Of Array**](./array-shift.js)
+[**Linked List**](./linkeed-list.js)
 
-**Challenge**: Value should be inserted in the middle of the array, or after the middle if the array length is odd... without utilizing built-in methods, while applying our own testing code
+**Challenge**: Create a linked list class which has methods to insert at head, find a node by value and print a collection of all the nodes in the linked list.
 
-**Approach & Efficiency**: I copied the array by value not reference so that the original array stays immutable, then I calculated the middle index using `Math.ceil` to account for arrays with odd length... then I used two for loops to populate the shifted array, the first loop for values until the middle, and the second loop for values after the middle... while also this could have been executed in one loop with multiple `if` statements.
+**Approach & Efficiency**: A class was created along with the methods... a helper function, `fromValues` was created to help in inserting multiple values at once for testing purposes and whatnot.
 
 **Solution**:
 
-*run: npm test array-shift*
+*run: npm test linked-list*
 
 ![arrayShift img](../../assets/array-shift.jpg)
