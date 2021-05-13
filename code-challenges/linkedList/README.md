@@ -1,6 +1,6 @@
 # Linked List
 
-[**Linked List**](./linkeed-list.js)
+[**Linked List**](./linked-list.js)
 
 **Challenge**: Create a linked list class which has methods to insert at head, find a node by value and print a collection of all the nodes in the linked list.
 
@@ -10,4 +10,4 @@
 
 *run: npm test linked-list*
 
-![arrayShift img](../../assets/array-shift.jpg)
+![linkedList img](../../assets/linked-list.png)
