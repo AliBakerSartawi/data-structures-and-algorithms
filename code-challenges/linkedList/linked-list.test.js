@@ -8,6 +8,8 @@ describe('Linked List', () => {
     expect(ll.head).toEqual(null);
   });
 
+  ///// insertAtHead()
+
   it('can properly insert at the head', () => {
     const ll = new LL();
     ll.insertAtHead(10);
@@ -26,6 +28,8 @@ describe('Linked List', () => {
     expect(ll.head.next.next.value).toEqual(30);
   });
 
+  ///// includes()
+
   it('returns true when finding a value within the linked list', () => {
     const ll = LL.fromValues(10, 20, 30);
     const includes = ll.includes(20);
@@ -38,11 +42,15 @@ describe('Linked List', () => {
     expect(includes).toEqual(false);
   });
 
+  ///// toString()
+
   it('can properly return a collection of all the values in the linked list', () => {
     const ll = LL.fromValues(10, 20, 30);
     const toString = ll.toString();
     expect(toString).toEqual(`{10} -> {20} -> {30} -> null`);
   });
+
+  ///// insertAtIndex()
 
   it('can properly insertAtIndex()', () => {
     const ll = LL.fromValues(10, 20, 30);
@@ -50,6 +58,8 @@ describe('Linked List', () => {
     const toString = ll.toString();
     expect(toString).toEqual(`{10} -> {20} -> {1} -> {30} -> null`);
   });
+
+  ///// append()
 
   it('can append() at the tail', () => {
     const ll = LL.fromValues(10, 20, 30);
@@ -66,6 +76,8 @@ describe('Linked List', () => {
   //   console.log(multiple);
   //   expect(toString).toEqual(`{10} -> {20} -> {30} -> {40} -> {50} -> {60} -> null`);
   // });
+
+  ///// insertBefore()
 
   it('can insertBefore() the head', () => {
     const ll = LL.fromValues(10, 20, 30);
@@ -96,6 +108,8 @@ describe('Linked List', () => {
     expect(exception).toEqual('Exception');
   });
 
+  ///// insertAfter()
+
   it('insertAfter() null can return Exception', () => {
     const ll = LL.fromValues(10, 20, 30);
     const exception = ll.insertAfter(null, 40);
@@ -117,4 +131,52 @@ describe('Linked List', () => {
     const toString = ll.toString();
     expect(toString).toEqual(`{10} -> {20} -> {25} -> {30} -> null`);
   });
+
+  ///// getKthFromEnd()
+
+  it('#getKthFromEnd() handles k < ll.length && k >= 0', () => {
+    const ll = LL.fromValues(10, 20, 30);
+    const result = ll.getKthFromEnd(0);
+    expect(result.value).toEqual(30);
+  });
+
+  it('#getKthFromEnd() handles k > ll.length', () => {
+    const ll = LL.fromValues(10, 20, 30);
+    const result = ll.getKthFromEnd(4);
+    expect(result).toEqual('Exception');
+  });
+
+  it('#getKthFromEnd() handles k = ll.length', () => {
+    const ll = LL.fromValues(10, 20, 30);
+    const result = ll.getKthFromEnd(3);
+    expect(result).toEqual('Exception');
+  });
+
+  it('#getKthFromEnd() handles k < 0', () => {
+    const ll = LL.fromValues(10, 20, 30);
+    const result = ll.getKthFromEnd(-1);
+    expect(result).toEqual('Exception');
+  });
+
+  it('#getKthFromEnd() handles ll.length = 1', () => {
+    const ll = LL.fromValues(10);
+    const result = ll.getKthFromEnd(0);
+    expect(result.value).toEqual(10);
+  });
+
+  it('#getKthFromEnd() handles `Happy Path` where k is in the middle', () => {
+    const ll = LL.fromValues(10, 20, 30, 40, 50);
+    const result = ll.getKthFromEnd(3);
+    expect(result.node.value).toEqual(20);
+    expect(result.path).toEqual('Happy Path');
+  });
+
+  ///// getMiddle() -----STRETCH GOAL-----
+
+  it('#getMiddle()', () => {
+    const ll = LL.fromValues(10, 20, 30, 40, 50);
+    const result = ll.getMiddle();
+    expect(result.value).toEqual(30);
+  });
+
 });

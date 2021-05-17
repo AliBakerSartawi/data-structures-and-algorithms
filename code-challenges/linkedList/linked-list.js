@@ -125,10 +125,46 @@ class LinkedList {
       return null;
     }
 
+    if (index === 0) {
+      return this.head;
+    }
+
     let current = this.head;
+
     for (let i = 0; i < index; i++) {
       current = current.next;
     }
+    return current;
+  }
+
+  getMiddle() {
+    const index = Math.floor(this.length / 2);
+    let current = this.head;
+
+    for (let i = 0; i < index; i++) {
+      current = current.next;
+    }
+    return current;
+  }
+
+  getKthFromEnd(k) {
+    if (k < 0 || k >= this.length) {
+      return 'Exception';
+    }
+    const index = (this.length - 1) - k;
+    let current = this.head;
+
+    for (let i = 0; i < index; i++) {
+      current = current.next;
+    }
+
+    if (k > 0 && k < (this.length - 1)) {
+      return {
+        path: 'Happy Path',
+        node: current,
+      };
+    }
+
     return current;
   }
 
