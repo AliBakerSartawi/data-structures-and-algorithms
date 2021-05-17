@@ -43,4 +43,78 @@ describe('Linked List', () => {
     const toString = ll.toString();
     expect(toString).toEqual(`{10} -> {20} -> {30} -> null`);
   });
+
+  it('can properly insertAtIndex()', () => {
+    const ll = LL.fromValues(10, 20, 30);
+    ll.insertAtIndex(2, 1);
+    const toString = ll.toString();
+    expect(toString).toEqual(`{10} -> {20} -> {1} -> {30} -> null`);
+  });
+
+  it('can append() at the tail', () => {
+    const ll = LL.fromValues(10, 20, 30);
+    ll.append(40);
+    const toString = ll.toString();
+    expect(toString).toEqual(`{10} -> {20} -> {30} -> {40} -> null`);
+  });
+
+  // it('can append() at the tail multiple nodes', () => {
+  //   const ll = LL.fromValues(10, 20, 30);
+  //   const arr = [40, 50, 60];
+  //   const multiple = ll.append(arr);
+  //   const toString = ll.toString();
+  //   console.log(multiple);
+  //   expect(toString).toEqual(`{10} -> {20} -> {30} -> {40} -> {50} -> {60} -> null`);
+  // });
+
+  it('can insertBefore() the head', () => {
+    const ll = LL.fromValues(10, 20, 30);
+    ll.insertBefore(10, 1);
+    const toString = ll.toString();
+    expect(toString).toEqual(`{1} -> {10} -> {20} -> {30} -> null`);
+  });
+
+  it('can insertBefore() a value in the middle', () => {
+    const ll = LL.fromValues(10, 20, 30);
+    ll.insertBefore(30, 25);
+    const toString = ll.toString();
+    expect(toString).toEqual(`{10} -> {20} -> {25} -> {30} -> null`);
+  });
+
+  it('can insertBefore() null, same as append', () => {
+    const ll = LL.fromValues(10, 20, 30);
+    ll.insertBefore(null, 40);
+    const toString = ll.toString();
+    expect(toString).toEqual(`{10} -> {20} -> {30} -> {40} -> null`);
+  });
+
+  it('insertBefore() can return Exception if value does not exist', () => {
+    const ll = LL.fromValues(10, 20, 30);
+    const exception = ll.insertBefore(50, 40);
+    const toString = ll.toString();
+    expect(toString).toEqual(`{10} -> {20} -> {30} -> null`);
+    expect(exception).toEqual('Exception');
+  });
+
+  it('insertAfter() null can return Exception', () => {
+    const ll = LL.fromValues(10, 20, 30);
+    const exception = ll.insertAfter(null, 40);
+    const toString = ll.toString();
+    expect(toString).toEqual(`{10} -> {20} -> {30} -> null`);
+    expect(exception).toEqual('Exception');
+  });
+
+  it('can insertAfter() the tail, same as append', () => {
+    const ll = LL.fromValues(10, 20, 30);
+    ll.insertAfter(30, 40);
+    const toString = ll.toString();
+    expect(toString).toEqual(`{10} -> {20} -> {30} -> {40} -> null`);
+  });
+
+  it('can insertAfter() a value in the middle', () => {
+    const ll = LL.fromValues(10, 20, 30);
+    ll.insertAfter(20, 25);
+    const toString = ll.toString();
+    expect(toString).toEqual(`{10} -> {20} -> {25} -> {30} -> null`);
+  });
 });

@@ -13,6 +13,80 @@ class LinkedList {
     this.length++;
   }
 
+  append(value) {
+    let current = this.head;
+    let prev = null;
+    if (value.length === undefined) { // type: number
+      while(current) {
+        prev = current;
+        current = current.next;
+        if (prev.next === null) {
+          prev.next = new LinkedListNode(value, null);
+          this.length++;
+          // break;
+        }
+      }
+    }
+
+    // if (value.length === 0) {
+    //   return 'Cannot append empty array';
+    // } else if (Array.isArray(value)) {
+    //   let i = 0;
+    //   while(current) {
+    //     prev = current;
+    //     current = current.next;
+    //     if (prev.next === null) {
+    //       prev.next = new LinkedListNode(value[i], null);
+    //       i++;
+    //       this.length++;
+    //       // break;
+    //     }
+    //   }
+    // }
+  }
+
+  insertBefore(value, newValue) {
+    if (value === this.head.value) {
+      return this.insertAtHead(newValue);
+    }
+    if (value === null) {
+      return this.append(newValue);
+    }
+
+    let current = this.head;
+    let next = current.next;
+    while (next) {
+      if (current.next.value === value) {
+        current.next = new LinkedListNode(newValue, current.next);
+        this.length++;
+        return current.next;
+      }
+      current = next;
+      next = current.next;
+    }
+    return 'Exception'; // if value does not exist in ll
+  }
+
+  insertAfter(value, newValue) {
+    if (value === null) {
+      return 'Exception'; // cannot append after null
+    }
+
+    let current = this.head;
+    let next = current.next;
+    while (current) {
+      if (current.value === value) {
+        next = new LinkedListNode(newValue, current.next);
+        current.next = next;
+        this.length++;
+        return next;
+      }
+      current = next;
+      next = current.next;
+    }
+    return 'Exception'; // if value does not exist in ll
+  }
+
   insertAtIndex(index, value) {
     if (index === 0) {
       return this.insertAtHead(value);
