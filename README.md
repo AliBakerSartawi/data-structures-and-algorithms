@@ -20,5 +20,6 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 | 2   | arrayShift             | [Insert Shift Array](./code-challenges/arrayShift/array-shift.js)|
 | 3   | arrayBinarySearch      | [Array Binary Search](./code-challenges/arrayBinarySearch/array-binary-search.js)|
 | 4   | linkedList             | [Linked List](./code-challenges/linkedList/linked-list.js)|
+| 5   | linkedListInsertions   | [Linked List](./code-challenges/linkedList/linked-list.js)|
 
 
