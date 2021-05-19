@@ -209,4 +209,41 @@ class LinkedListNode {
 
 }
 
-module.exports = LinkedList;
+// ------------zipLists------------
+
+function zipLists(list1, list2) {
+
+  const zippedLL = new LinkedList();
+
+  let current1 = list1.head;
+  let current2 = list2.head;
+
+  while (current1 !== null || current2 !== null) {
+
+    if (zippedLL.head === null) {
+      zippedLL.insertAtHead(current1.value);
+      current1 = current1.next;
+      zippedLL.append(current2.value);
+      current2 = current2.next;
+    }
+
+    if (current1 !== null) {
+      zippedLL.append(current1.value);
+      current1 = current1.next;
+    }
+
+    if (current2 !== null) {
+      zippedLL.append(current2.value);
+      current2 = current2.next;
+    }
+
+  }
+
+  return zippedLL;
+
+}
+
+module.exports = {
+  LinkedList: LinkedList,
+  zipLists: zipLists
+};

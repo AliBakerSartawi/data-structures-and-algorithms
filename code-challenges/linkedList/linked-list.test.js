@@ -1,6 +1,7 @@
 'use strict';
 
-const LL = require('./linked-list');
+const LL = require('./linked-list').LinkedList;
+const zipLists = require('./linked-list').zipLists;
 
 describe('Linked List', () => {
   it('can create empty linked list', () => {
@@ -177,6 +178,32 @@ describe('Linked List', () => {
     const ll = LL.fromValues(10, 20, 30, 40, 50);
     const result = ll.getMiddle();
     expect(result.value).toEqual(30);
+  });
+
+  ///// zipLists()
+
+  it('#zipLists() handles list1.length = list2.length', () => {
+    const list1 = LL.fromValues(10, 20, 30);
+    const list2 = LL.fromValues(1, 2, 3);
+    const zipped = zipLists(list1, list2);
+
+    expect(zipped.toString()).toEqual(`{10} -> {1} -> {20} -> {2} -> {30} -> {3} -> null`);
+  });
+
+  it('#zipLists() handles list1.length < list2.length', () => {
+    const list1 = LL.fromValues(10, 20);
+    const list2 = LL.fromValues(1, 2, 3, 4);
+    const zipped = zipLists(list1, list2);
+
+    expect(zipped.toString()).toEqual(`{10} -> {1} -> {20} -> {2} -> {3} -> {4} -> null`);
+  });
+
+  it('#zipLists() handles list1.length > list2.length', () => {
+    const list1 = LL.fromValues(10, 20, 30, 40);
+    const list2 = LL.fromValues(1, 2);
+    const zipped = zipLists(list1, list2);
+
+    expect(zipped.toString()).toEqual(`{10} -> {1} -> {20} -> {2} -> {30} -> {40} -> null`);
   });
 
 });
