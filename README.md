@@ -23,5 +23,6 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 | 5   | linkedListInsertions   | [Linked List](./code-challenges/linkedList/linked-list.js)|
 | 6   | linkedListKthFromEnd   | [Linked List](./code-challenges/linkedList/linked-list.js)|
 | 7   | linkedZipLists         | [Linked List](./code-challenges/linkedList/linked-list.js)|
+| 8   | stacksAndQueues        | [Stacks & Queues](./code-challenges/stacksAndQueues/stacks-and-queues.js)|
 
 
