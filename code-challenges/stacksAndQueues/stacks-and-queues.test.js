@@ -192,11 +192,7 @@ describe(':::::Queue:::::', () => {
     expect(q.size).toEqual(0);
     expect(q.front).toEqual(null);
 
-    let num = 0;
-    console.log(++num);
     q.enqueue(10);
-    console.log(++num);
-    console.log(q);
     q.enqueue(20);
     q.enqueue(30);
     expect(q.size).toEqual(3);
