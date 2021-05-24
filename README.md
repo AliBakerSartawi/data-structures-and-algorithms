@@ -14,16 +14,17 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 
 ## 401 Data Structures, Code Challenges
 
-| No  | Topic                  | URL                             |
-| --- | ---                    | ---                             |
-| 1   | arrayReverse           | [Reverse an Array](./code-challenges/arrayReverse/array-reverse.js)|
-| 2   | arrayShift             | [Insert Shift Array](./code-challenges/arrayShift/array-shift.js)|
-| 3   | arrayBinarySearch      | [Array Binary Search](./code-challenges/arrayBinarySearch/array-binary-search.js)|
-| 4   | linkedList             | [Linked List](./code-challenges/linkedList/linked-list.js)|
-| 5   | linkedListInsertions   | [Linked List](./code-challenges/linkedList/linked-list.js)|
-| 6   | linkedListKthFromEnd   | [Linked List](./code-challenges/linkedList/linked-list.js)|
-| 7   | linkedZipLists         | [Linked List](./code-challenges/linkedList/linked-list.js)|
-| 8   | stacksAndQueues        | [Stacks & Queues](./code-challenges/stacksAndQueues/stacks-and-queues.js)|
-| 9   | queueWithStacks        | [PseudoQueue](./code-challenges/queueWithStacks/queue-with-stacks.js)|
+| No  | Topic                  | URL                                                                  |
+| --- | ---                    | -------------------------------------------------------------------- |
+| 01  | arrayReverse           | [Reverse an Array](./code-challenges/arrayReverse/README.md)         |
+| 02  | arrayShift             | [Insert Shift Array](./code-challenges/arrayShift/README.md)         |
+| 03  | arrayBinarySearch      | [Array Binary Search](./code-challenges/arrayBinarySearch/README.md) |
+| 04  | linkedList             | [Linked List](./code-challenges/linkedList/README.md)                |
+| 05  | linkedListInsertions   | [Linked List](./code-challenges/linkedList/README.md)                |
+| 06  | linkedListKthFromEnd   | [Linked List](./code-challenges/linkedList/README.md)                |
+| 07  | linkedZipLists         | [Linked List](./code-challenges/linkedList/README.md)                |
+| 08  | stacksAndQueues        | [Stacks & Queues](./code-challenges/stacksAndQueues/README.md)       |
+| 09  | queueWithStacks        | [PseudoQueue](./code-challenges/queueWithStacks/README.md)           |
+| 10  | fifoAnimalShelter      | [fifaAnimalShelter](./code-challenges/fifoAnimalShelter/README.md)   |
 
 
