@@ -59,39 +59,7 @@ function multiBracketValidation(string) {
     }
   }
 
-  return [string, true];
+  return true;
 }
 
-// let string = "()[[Extra Characters]]";
-// let arr = string.split("");
-// let arr2 = [];
-
-// console.log(string.split("").findIndex((element) => element === "E"));
-// console.log(arr.splice(4, 1));
-// console.log(arr);
-// console.log(arr2.shift());
-// console.log(multiBracketValidation(string));
-
-let str1 = '{}';
-let str2 = '{}(){}';
-let str3 = '()[[Extra Characters]]';
-let str4 = '(){}[[]]';
-let str5 = '{}{Code}[Fellows](())';
-let str6 = '[({}]';
-let str7 = '(](';
-let str8 = '{(})';
-let str9 = '{';
-let str10 = ')';
-let str11 = '[)';
-
-console.log(multiBracketValidation(str1));
-console.log(multiBracketValidation(str2));
-console.log(multiBracketValidation(str3));
-console.log(multiBracketValidation(str4));
-console.log(multiBracketValidation(str5));
-console.log(multiBracketValidation(str6));
-console.log(multiBracketValidation(str7));
-console.log(multiBracketValidation(str8));
-console.log(multiBracketValidation(str9));
-console.log(multiBracketValidation(str10));
-console.log(multiBracketValidation(str11));
+module.exports = multiBracketValidation;

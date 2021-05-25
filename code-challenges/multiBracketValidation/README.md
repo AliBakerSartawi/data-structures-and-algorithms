@@ -1,18 +1,20 @@
-# FIFO Animal Shelter
+# multiBracketValidation
 
-[**FIFO AnimalShelter**](./fifo-animal-shelter.js)
+[**multiBracketValidation**](./multi-bracket-validation.js)
 
 **Challenge**:
-- Create a `FIFO` structure that has two types (cats and dogs)
+- Write a function that checks if the brackets are balanced or not.
 
 **Approach & Efficiency**:
-- `FIFO` means `queue`, so I used my previously created `Queue` class
-  - I created two instances of `Queue` inside the constructor of `AnimalShelter`, one for cats and one for dogs
-  - With two queues, the `dequeue` method will work properly on each type
-  - If we had one type, we would face a problem of having to traverse the queue to search for the desired type (the `pref` parameter), and this would oppose the `FIFO` structure as well
+- Split string into array
+- Push the brackets into another array, getting rid of irrelevant characters
+- Assign similar integers (positive for opening and negative for closing brackets)
+- Loop through the array, shift the first value and iterate again to search for a matching closing brackets.
+- Once found, splice that bracket out of the array
+- If all match, array will be empty, loop will be exited and true will be returned... otherwise, false will be returned because of an error along the way
 
 **Solution**:
 
-*run: npm test fifo-animal-shelter*
+*run: npm test multi-bracket-validation*
 
-![AnimalShelter img](../../assets/fifo-animal-shelter.png)
+![multiBracketValidation img](../../assets/multi-bracket-validation.png)
