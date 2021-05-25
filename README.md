@@ -25,6 +25,7 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 | 07  | linkedZipLists         | [Linked List](./code-challenges/linkedList/README.md)                |
 | 08  | stacksAndQueues        | [Stacks & Queues](./code-challenges/stacksAndQueues/README.md)       |
 | 09  | queueWithStacks        | [PseudoQueue](./code-challenges/queueWithStacks/README.md)           |
-| 10  | fifoAnimalShelter      | [fifaAnimalShelter](./code-challenges/fifoAnimalShelter/README.md)   |
+| 10  | fifoAnimalShelter      | [fifoAnimalShelter](./code-challenges/fifoAnimalShelter/README.md)   |
+| 11  | multiBracketValidation | [multiBracketValidation](./code-challenges/multiBracketValidation/README.md)   |
 
 
