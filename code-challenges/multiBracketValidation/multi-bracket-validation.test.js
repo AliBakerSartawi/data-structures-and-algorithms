@@ -1,4 +1,4 @@
-const multiBracketValidation = require('./multi-bracket-validation');
+const { multiBracketValidation } = require('./multi-bracket-validation');
 
 let str1 = '{}';
 let str2 = '{}(){}';
@@ -12,7 +12,7 @@ let str9 = '{';
 let str10 = ')';
 let str11 = '[)';
 
-describe('[({ multiBracketValidation })] 🧪', () => {
+describe('[({ multiBracketValidation with Stack })] 🧪', () => {
   it('#returns true ✅ if brackets are balanced', () => {
     expect(multiBracketValidation(str1)).toEqual(true);
     expect(multiBracketValidation(str2)).toEqual(true);
@@ -30,4 +30,5 @@ describe('[({ multiBracketValidation })] 🧪', () => {
     expect(multiBracketValidation(str11)).toEqual(false);
   });
 });
+
 
