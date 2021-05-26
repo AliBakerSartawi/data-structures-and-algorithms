@@ -1,65 +1,49 @@
 /* eslint-disable indent */
 'use strict';
 
+const Stack = require('../stacksAndQueues/stacks-and-queues').Stack;
+
 function multiBracketValidation(string) {
+  // if string is empty
+  if (!string) return false;
+
   let bracketsArray = [];
   let split = string.split('');
   for (let i = 0; i < split.length; i++) {
-    switch (split[i]) {
-      case '(':
-        bracketsArray.push(1);
-        break;
-
-      case ')':
-        bracketsArray.push(-1);
-        break;
-
-      case '{':
-        bracketsArray.push(2);
-        break;
-
-      case '}':
-        bracketsArray.push(-2);
-        break;
-
-      case '[':
-        bracketsArray.push(3);
-        break;
-
-      case ']':
-        bracketsArray.push(-3);
-        break;
-
-      default:
-        break;
-    }
+    if (split[i] === '(') bracketsArray.push(1);
+    if (split[i] === ')') bracketsArray.push(-1);
+    if (split[i] === '{') bracketsArray.push(2);
+    if (split[i] === '}') bracketsArray.push(-2);
+    if (split[i] === '[') bracketsArray.push(3);
+    if (split[i] === ']') bracketsArray.push(-3);
   }
 
-  while (bracketsArray) {
-    const openingBracket = bracketsArray.shift();
+  // if there were no brackets in the string or only one
+  if (bracketsArray.length <= 1) return false;
 
-    // necessary to break the loop
-    if (!openingBracket) break;
+  // if first bracket in string was closing
+  if (bracketsArray[0] < 0) return false;
 
-    // for brackets arriving without corresponding opening
-    if (openingBracket < 0) return false;
+  const stack = new Stack();
 
-    // for brackets without corresponding closing
-    if (bracketsArray.length === 0) return false;
+  let length = bracketsArray.length;
 
-
-    for (let i = 0; i < bracketsArray.length; i++) {
-      if (openingBracket === (bracketsArray[i] * -1)) {
-        bracketsArray.splice(i, 1);
-        break;
-      }
-      if (openingBracket !== bracketsArray[i]) {
-        return false;
-      }
+  for (let i = 0; i < length; i++) {
+    let bracket = bracketsArray.shift();
+    // when stack is empty
+    if (!stack.top) {
+      stack.push(bracket);
+    } else if (stack.top.value === bracket) { // if brackets are of same type and direction
+      stack.push(bracket);
+    } else if (stack.top.value === (bracket * -1)) { // matching closing
+      stack.pop();
+    } else {
+      return false;
     }
   }
-
   return true;
 }
 
-module.exports = multiBracketValidation;
+module.exports = {
+  multiBracketValidation
+};
