@@ -31,15 +31,17 @@ function multiBracketValidation(string) {
   for (let i = 0; i < length; i++) {
     let bracket = bracketsArray.shift();
     // when stack is empty
+    console.log('before', stack.top)
     if (!stack.top) {
       stack.push(bracket);
-    } else if (stack.top.value === bracket) { // if brackets are of same type and direction
+    } else if (bracket > 0) { // if brackets are of opening type
       stack.push(bracket);
-    } else if (stack.top.value === (bracket * -1)) { // matching closing
+    } else if ((bracket * -1) === stack.top.value) { // matching closing
       stack.pop();
     } else {
       return false;
     }
+    console.log('after', stack.top)
   }
   return true;
 }

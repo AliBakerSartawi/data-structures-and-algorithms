@@ -11,6 +11,7 @@ let str8 = '{(})';
 let str9 = '{';
 let str10 = ')';
 let str11 = '[)';
+let str12 = '{}[()]';
 
 describe('[({ multiBracketValidation with Stack })] 🧪', () => {
   it('#returns true ✅ if brackets are balanced', () => {
@@ -19,6 +20,7 @@ describe('[({ multiBracketValidation with Stack })] 🧪', () => {
     expect(multiBracketValidation(str3)).toEqual(true);
     expect(multiBracketValidation(str4)).toEqual(true);
     expect(multiBracketValidation(str5)).toEqual(true);
+    expect(multiBracketValidation(str12)).toEqual(true);
   });
 
   it('#returns false 🛑 if brackets are not balanced', () => {
