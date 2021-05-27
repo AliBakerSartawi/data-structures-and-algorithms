@@ -27,5 +27,6 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 | 09  | queueWithStacks        | [PseudoQueue](./code-challenges/queueWithStacks/README.md)           |
 | 10  | fifoAnimalShelter      | [fifoAnimalShelter](./code-challenges/fifoAnimalShelter/README.md)   |
 | 11  | multiBracketValidation | [multiBracketValidation](./code-challenges/multiBracketValidation/README.md)   |
+| 12  | binarySearchTree       | [binarySearchTree](./code-challenges/tree/README.md)   |
 
 
