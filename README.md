@@ -14,19 +14,20 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 
 ## 401 Data Structures, Code Challenges
 
-| No  | Topic                  | URL                                                                  |
-| --- | ---                    | -------------------------------------------------------------------- |
-| 01  | arrayReverse           | [Reverse an Array](./code-challenges/arrayReverse/README.md)         |
-| 02  | arrayShift             | [Insert Shift Array](./code-challenges/arrayShift/README.md)         |
-| 03  | arrayBinarySearch      | [Array Binary Search](./code-challenges/arrayBinarySearch/README.md) |
-| 04  | linkedList             | [Linked List](./code-challenges/linkedList/README.md)                |
-| 05  | linkedListInsertions   | [Linked List](./code-challenges/linkedList/README.md)                |
-| 06  | linkedListKthFromEnd   | [Linked List](./code-challenges/linkedList/README.md)                |
-| 07  | linkedZipLists         | [Linked List](./code-challenges/linkedList/README.md)                |
-| 08  | stacksAndQueues        | [Stacks & Queues](./code-challenges/stacksAndQueues/README.md)       |
-| 09  | queueWithStacks        | [PseudoQueue](./code-challenges/queueWithStacks/README.md)           |
-| 10  | fifoAnimalShelter      | [fifoAnimalShelter](./code-challenges/fifoAnimalShelter/README.md)   |
-| 11  | multiBracketValidation | [multiBracketValidation](./code-challenges/multiBracketValidation/README.md)   |
-| 12  | binarySearchTree       | [binarySearchTree](./code-challenges/tree/README.md)   |
+| No  | Topic                     | URL                                                                  |
+| --- | ---                       | -------------------------------------------------------------------- |
+| 01  | arrayReverse              | [Reverse an Array](./code-challenges/arrayReverse/README.md)         |
+| 02  | arrayShift                | [Insert Shift Array](./code-challenges/arrayShift/README.md)         |
+| 03  | arrayBinarySearch         | [Array Binary Search](./code-challenges/arrayBinarySearch/README.md) |
+| 04  | linkedList                | [Linked List](./code-challenges/linkedList/README.md)                |
+| 05  | linkedListInsertions      | [Linked List](./code-challenges/linkedList/README.md)                |
+| 06  | linkedListKthFromEnd      | [Linked List](./code-challenges/linkedList/README.md)                |
+| 07  | linkedZipLists            | [Linked List](./code-challenges/linkedList/README.md)                |
+| 08  | stacksAndQueues           | [Stacks & Queues](./code-challenges/stacksAndQueues/README.md)       |
+| 09  | queueWithStacks           | [PseudoQueue](./code-challenges/queueWithStacks/README.md)           |
+| 10  | fifoAnimalShelter         | [fifoAnimalShelter](./code-challenges/fifoAnimalShelter/README.md)   |
+| 11  | multiBracketValidation    | [multiBracketValidation](./code-challenges/multiBracketValidation/README.md)   |
+| 12  | binarySearchTree          | [binarySearchTree](./code-challenges/tree/README.md)   |
+| 13  | findMaxValue - BinaryTree | [findMaxValue - BinaryTree](./code-challenges/tree/README.md)   |
 
 
