@@ -118,6 +118,32 @@ class BinaryTree {
     return result;
   }
 
+  // this method can be useful if nodes are added manually
+  // ... without an insert method
+  updateCount() {
+    this.count = this.bfs().length;
+  }
+
+  // without using built-in methods
+  findMaxVal() {
+    let maxVal = this.root.value;
+
+    // nested recursive function
+    const traverse = (node) => {
+      // if left child, go left again
+      if (node.left) traverse(node.left);
+
+      // if right child, go right again
+      if (node.right) traverse(node.right);
+
+      // capture node value if greater than maxVal
+      maxVal = node.value > maxVal ? node.value : maxVal;
+    };
+    traverse(this.root);
+
+    return maxVal;
+  }
+
 }
 
 class BinarySearchTree extends BinaryTree {
@@ -198,4 +224,9 @@ class BinarySearchTree extends BinaryTree {
 
 }
 
-module.exports = BinarySearchTree;
+module.exports = {
+  Node,
+  BinaryTree,
+  BinarySearchTree
+};
+

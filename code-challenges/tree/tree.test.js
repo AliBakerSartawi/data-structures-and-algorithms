@@ -1,6 +1,6 @@
 // 'use strict';
 
-const BinarySearchTree = require('./tree');
+const { Node, BinaryTree, BinarySearchTree } = require('./tree');
 
 describe(':::: BinarySearchTree 🌳 :::', () => {
 
@@ -77,7 +77,7 @@ describe(':::: BinarySearchTree 🌳 :::', () => {
 
   // breadth first search
   // (15), 3, 36, 2, 12, 28, 39
-  it('#bst() ---> returns collection from a breadth first search', () => {
+  it('#bfs() ---> returns collection from a breadth first search', () => {
     expect(bst.bfs()).toEqual([15, 3, 36, 2, 12, 28, 39]);
   });
 
@@ -89,4 +89,53 @@ describe(':::: BinarySearchTree 🌳 :::', () => {
     expect(bst.max()).toEqual(39);
   });
   
+});
+
+describe(':::: findMaxVal ↗️ ::::', () => {
+
+  // Example Tree
+  //          (2)
+  //       /      \
+  //    (7)         (5)
+  //   /  \           \
+  // (2)  (6)          (9)
+  //     /  \          /
+  //   (5)  (11)     (4)
+
+
+  let tree;
+
+  beforeAll(() => {
+    tree = new BinaryTree(2);
+
+    let two = new Node(7);
+    let three = new Node(5);
+    let four = new Node(2);
+    let five = new Node(6);
+    let six = new Node(9);
+    let seven = new Node(5);
+    let eight = new Node(11);
+    let nine = new Node(4);
+
+    tree.root.left = two;
+    tree.root.right = three;
+    two.left = four;
+    two.right = five;
+    three.right = six;
+    five.left = seven;
+    five.right = eight;
+    six.left = nine;
+
+  });
+
+  it('#findMaxVal() ---> returns greatest value in BinaryTree (not just a BST)', () => {
+    expect(tree.findMaxVal()).toEqual(11);
+  });
+
+  // ---EXTRA---
+  it('EXTRA #updateCount() ---> updates the size of the tree when nodes are added manually without an insert method', () => {
+    expect(tree.count).toEqual(1);
+    tree.updateCount();
+    expect(tree.count).toEqual(9);
+  });
 });
