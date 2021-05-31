@@ -118,6 +118,60 @@ class BinaryTree {
     return result;
   }
 
+  // --- breadth first search --- without built-in language methods
+  // using a queue!
+  // (15), 3, 36, 2, 12, 28, 39
+  bfsWithoutBuiltInMethods() {
+    let result = [];
+    let queue = [];
+
+    queue[0] = this.root;
+
+    // or queue.peek() if queue is a class
+    while (queue[0] !== undefined) {
+      let currentNode = queue[0];
+
+      for (let i = 0; i < queue.length; i++) {
+        queue[i] = queue[i+1];
+      }
+      // console.log('QUEUE', queue);
+      // console.log('current', currentNode);
+
+      result[result.length] = currentNode.value;
+      // console.log('result', result);
+
+      if (currentNode.left) {
+        if (queue[0] === undefined) {
+          queue[0] = currentNode.left;
+        } else {
+          for (let i = 0; i < queue.length + 1; i++) {
+            if (queue[i] === undefined) {
+              queue[i] = currentNode.left;
+              break;
+            }
+          }
+        }
+      }
+      // console.log('QUEUE', queue);
+
+      if (currentNode.right) {
+        if (queue[0] === undefined) {
+          queue[0] = currentNode.right;
+        } else {
+          for (let i = 0; i < queue.length + 1; i++) {
+            if (queue[i] === undefined) {
+              queue[i] = currentNode.right;
+              break;
+            }
+          }
+        }
+      }
+      // console.log('QUEUE', queue);
+    }
+
+    return result;
+  }
+
   // this method can be useful if nodes are added manually
   // ... without an insert method
   updateCount() {

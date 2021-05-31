@@ -81,6 +81,12 @@ describe(':::: BinarySearchTree 🌳 :::', () => {
     expect(bst.bfs()).toEqual([15, 3, 36, 2, 12, 28, 39]);
   });
 
+  // breadth first search --- without built-in methods
+  // (15), 3, 36, 2, 12, 28, 39
+  it('#bfs() ---> returns collection from a breadth first search', () => {
+    expect(bst.bfsWithoutBuiltInMethods()).toEqual([15, 3, 36, 2, 12, 28, 39]);
+  });
+
   it('#min() ---> returns smallest value in the tree', () => {
     expect(bst.min()).toEqual(2);
   });
@@ -91,7 +97,7 @@ describe(':::: BinarySearchTree 🌳 :::', () => {
   
 });
 
-describe(':::: findMaxVal ↗️ ::::', () => {
+describe(':::: findMaxVal ↗️ & breadthSearchFirst ::::', () => {
 
   // Example Tree
   //          (2)
@@ -137,5 +143,15 @@ describe(':::: findMaxVal ↗️ ::::', () => {
     expect(tree.count).toEqual(1);
     tree.updateCount();
     expect(tree.count).toEqual(9);
+  });
+
+  // bfs() with built-in language methods (push and pop)
+  it('#bfs() ---> returns a collection of the nodes in the tree level by level', () => {
+    expect(tree.bfs()).toEqual([2, 7, 5, 2, 6, 9, 5, 11, 4]);
+  });
+
+  // bfs() without built-in language methods (push and pop)
+  it('#bfsWithoutBuiltInMethods() ---> returns a collection of the nodes in the tree level by level', () => {
+    expect(tree.bfsWithoutBuiltInMethods()).toEqual([2, 7, 5, 2, 6, 9, 5, 11, 4]);
   });
 });
