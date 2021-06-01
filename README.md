@@ -29,6 +29,7 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 | 11  | multiBracketValidation    | [multiBracketValidation](./code-challenges/multiBracketValidation/README.md)   |
 | 12  | binarySearchTree          | [binarySearchTree](./code-challenges/tree/README.md)   |
 | 13  | findMaxValue - BinaryTree | [findMaxValue - BinaryTree](./code-challenges/tree/README.md)   |
-| 13  | bfs - BinaryTree          | [breadthFirstSearch - BinaryTree](./code-challenges/tree/README.md)   |
+| 14  | bfs - BinaryTree          | [breadthFirstSearch - BinaryTree](./code-challenges/tree/README.md)   |
+| 15  | fizzBuzzTree              | [fizzbuzzTree](./code-challenges/fizzBuzzTree/README.md)   |
 
 
