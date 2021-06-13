@@ -70,3 +70,12 @@ function insertionSort(arr) {
 
 - **Pass 5**:
   - `15` is smaller than `42`, so the same will happen as **pass 4** until `15` is placed before `16`.
+
+---
+
+## Efficiency
+
+- **Time**:
+  - O(n^2)
+- **Space**:
+  - O(1)
