@@ -32,5 +32,6 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 | 14  | bfs - BinaryTree          | [breadthFirstSearch - BinaryTree](./code-challenges/tree/README.md)   |
 | 15  | fizzBuzzTree              | [fizzbuzzTree](./code-challenges/fizzBuzzTree/README.md)   |
 | 26  | insertionSort             | [insertionSort](./code-challenges/insertionSort/BLOG.md)   |
+| 27  | mergeSort                 | [mergeSort](./code-challenges/mergeSort/BLOG.md)   |
 
 
