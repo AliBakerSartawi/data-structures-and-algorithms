@@ -1,8 +1,10 @@
 # mergeSort
 
 Merge Sort is a sorting algorithm
-
-- description
+  - It follows a divide and conquer approach
+  - It keeps splitting the array in half recursively
+  - Then sorts the two halves of the array
+  - Then merges the two halves by comparing the values by index, and pushing the correct value to the finally sorted array
 
 ---
 
@@ -49,42 +51,41 @@ ALGORITHM Merge(left, right, arr)
 ## JavaScript
 
 ```javascript
-function mergeSort(arr) {
-  let n = arr.length;
-  if (n > 1) {
-    let mid = Math.floor(n / 2);
-    let left = arr.slice(0, mid);
-    let right = arr.slice(mid);
-    mergeSort(left);
-    mergeSort(right);
-    merge(left, right, arr);
-  }
-  return arr;
-}
+const mergeSort = function (items, compare) {
+  compare = compare ? compare : (a, b) => a < b;
 
-function merge(left, right, arr) {
-  let i = 0;
-  let j = 0;
-  let k = 0;
-  while (i < left.length && j < right.length) {
-    if (left[i] <= right[j]) {
-      arr[k] = left[i];
-      i++;
-    } else {
-      arr[k] = right[j];
-      j++;
+  if (items.length < 2) return items;
+
+  let middle = Math.floor(items.length / 2);
+
+  let left = items.slice(0, middle);
+  let right = items.slice(middle);
+
+  return merge(mergeSort(left, compare), mergeSort(right, compare), compare);
+};
+
+function merge(left, right, compare) {
+  var result = [];
+
+  while (left.length || right.length) {
+    if (!left.length) {
+      result.push(right.shift());
+      continue;
     }
-    k++;
+
+    if (!right.length) {
+      result.push(left.shift());
+      continue;
+    }
+
+    if (compare(left[0], right[0])) {
+      result.push(left.shift());
+    } else {
+      result.push(right.shift());
+    }
   }
-  if (i === left.length) {
-    arr[k] = right[j];
-    j++;
-    k++;
-  } else {
-    arr[k] = left[i];
-    i++;
-    k++;
-  }
+
+  return result.concat(left).concat(right);
 }
 ```
 
