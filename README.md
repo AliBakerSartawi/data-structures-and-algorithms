@@ -34,5 +34,6 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 | 26  | insertionSort             | [insertionSort](./code-challenges/insertionSort/BLOG.md)   |
 | 27  | mergeSort                 | [mergeSort](./code-challenges/mergeSort/BLOG.md)   |
 | 28  | quickSort                 | [quickSort](./code-challenges/quickSort/BLOG.md)   |
+| 30  | hashTable                 | [hashTable](./code-challenges/hashTable/README.md)   |
 
 
