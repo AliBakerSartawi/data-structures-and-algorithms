@@ -12,4 +12,4 @@
 
 *run: npm test hash-table*
 
-![stacksAndQueues img](../../assets/tree.png)
+![hashTable img](../../assets/hash-table.png)
