@@ -1,6 +1,6 @@
 'use strict';
 
-const HashTable = require('./hash-table');
+const {HashTable} = require('./hash-table');
 
 describe('HashTable Works Super Fine', () => {
   let hashTable;

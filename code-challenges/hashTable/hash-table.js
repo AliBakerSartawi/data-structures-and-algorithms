@@ -132,4 +132,9 @@ hashTable.set('melon', 'water');
 // console.log(hashTable.get('batteekh'));
 // console.log(hashTable.includes('batteekh'));
 
-module.exports = HashTable;
+module.exports = {
+  HashTable,
+  LinkedList,
+  Node
+};
+
