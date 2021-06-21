@@ -1,15 +1,16 @@
-# Repeated Word
+# Tree Intersection
 
-[**Repeated Word**](./repeated-word.js)
+[**Tree Intersection**](./tree-intersection.js)
 
 **Challenge**:
-- Create a function that takes in a lengthy string, and returns the first word to be repeated
+- Create a function that takes in two binary search trees, and returns the values shared in both trees
 
 **Approach & Efficiency**: 
-- regex and a for loop were used to find the result
+- A hash table can be very efficient in this case
+- Due to time constraints, a simpler less-efficient solution was adopted... using two for loops to find the intersection
 
 **Solution**:
 
-*run: npm test repeated-word*
+*run: npm test tree-intersection*
 
-![repeatedWord img](../../assets/repeated-word.png)
+![treeIntersection img](../../assets/tree-intersection.png)
