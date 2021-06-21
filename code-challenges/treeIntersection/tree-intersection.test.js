@@ -35,6 +35,10 @@ describe('treeIntersection', () => {
   it('returns array of shared values', () => {
     expect(treeIntersection(bst1, bst2)).toEqual([12, 36, 39]);
   });
+
+  it('returns `No Intersection` if there is none', () => {
+    expect(treeIntersection(bst1, bst3)).toEqual('No Intersection');
+  });
 });
 
 
