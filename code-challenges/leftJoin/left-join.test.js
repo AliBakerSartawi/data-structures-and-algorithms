@@ -35,4 +35,9 @@ describe('leftJoin 👈👈👈👈', () => {
     expect(leftJoin(hashTable1, hashTable2)).toEqual(expected);
   });
 
+  test('Does not add non-corresponding key from second table', () => {
+    let result = leftJoin(hashTable1, hashTable2);
+    expect(result.flow).toBeFalsy();
+  });
+
 });
