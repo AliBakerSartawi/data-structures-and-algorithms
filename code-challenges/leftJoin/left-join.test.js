@@ -40,4 +40,13 @@ describe('leftJoin 👈👈👈👈', () => {
     expect(result.flow).toBeFalsy();
   });
 
+  // result looks like this
+  // {
+  //   wrath: [ 'anger', 'delight' ],
+  //   outfit: [ 'garb' ],
+  //   diligent: [ 'employed', 'idle' ],
+  //   guide: [ 'usher', 'follow' ],
+  //   fond: [ 'enamored', 'averse' ]
+  // }
+
 });
