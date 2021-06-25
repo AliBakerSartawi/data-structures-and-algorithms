@@ -61,7 +61,7 @@ class Graph {
 
   getNeighbors(vertex) {
     // console.log(vertex);
-    return this.adjacencyList.get(vertex) || null;
+    return this.adjacencyList.get(vertex).length ? this.adjacencyList.get(vertex) : null;
   }
 
   size() {
