@@ -12,9 +12,9 @@ describe(':::: GRAPH ::::', () => {
     two = new Vertex(2);
     twoToo = new Vertex(2);
     three = new Vertex(3);
-    // four = new Vertex(4);
-    // fourToo = new Vertex(4);
-    // five = new Vertex(5);
+    four = new Vertex(4);
+    fourToo = new Vertex(4);
+    five = new Vertex(5);
   });
 
   test('#addVertex() adds 🟢 vertex properly', () => {
@@ -114,5 +114,29 @@ describe(':::: GRAPH ::::', () => {
 
   test('#size() returns 🔴 a big fat zero if the graph is lonely', () => {
     expect(g.size()).toEqual(0);
+  });
+
+  test('#bfs() returns 🟢 collection of visited vertices (maintains order)', () => {
+    g.addVertex(zero);
+    g.addVertex(one);
+    g.addVertex(two);
+    g.addVertex(three);
+    g.addVertex(four);
+    g.addVertex(five);
+
+    g.addDirectedEdge(zero, two);
+    g.addDirectedEdge(two, three);
+    g.addDirectedEdge(two, four);
+    g.addDirectedEdge(three, five);
+    g.addDirectedEdge(four, five);
+    g.addDirectedEdge(one, three);
+
+    expect(g.bfs(zero)).toEqual([
+      { value: 2 },
+      { value: 3 },
+      { value: 4 },
+      { value: 5 }
+    ]);
+    expect(g.bfs(zero)[0].value).toEqual(2);
   });
 });

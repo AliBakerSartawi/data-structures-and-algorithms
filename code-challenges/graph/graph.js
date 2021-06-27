@@ -69,30 +69,30 @@ class Graph {
   size() {
     return this.adjacencyList.size;
   }
-}
 
-function bfs(start, adjacencyList) {
-  // to prevent an infinite loop
-  const visited = new Set();
+  bfs(start) {
+    // to prevent an infinite loop
+    const visited = new Set();
 
-  const queue = [start];
+    const queue = [start];
 
-  while (queue.length) {
-    const vertex = queue.shift();
+    while (queue.length) {
+      const vertex = queue.shift();
 
-    const neighbors = adjacencyList.get(vertex);
-    console.log(neighbors);
+      const neighbors = this.adjacencyList.get(vertex);
+      console.log(neighbors);
 
-    for (const neighbor of neighbors) {
-      console.log(neighbor.vertex);
-      if (!visited.has(neighbor.vertex)) {
-        visited.add(neighbor.vertex);
-        queue.push(neighbor.vertex);
+      for (const neighbor of neighbors) {
+        console.log(neighbor.vertex);
+        if (!visited.has(neighbor.vertex)) {
+          visited.add(neighbor.vertex);
+          queue.push(neighbor.vertex);
+        }
       }
     }
-  }
 
-  return [...visited];
+    return [...visited];
+  }
 }
 
 const g = new Graph();
@@ -127,7 +127,7 @@ console.log(g.getVertices());
 console.log(g.getUniqueVertices());
 console.log(g.getNeighbors(three));
 
-console.log(bfs(zero, g.adjacencyList));
+console.log(g.bfs(zero));
 
 module.exports = {
   Graph,
