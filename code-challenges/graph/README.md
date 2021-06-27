@@ -11,10 +11,12 @@
   - size()
   - Extra methods:
     - getUniqueVertices()
+  - bfs() -> or simply breadth-first traversal
 
 **Approach & Efficiency**: 
 - A separate `Vertex` and `Edge` class were created
 - A `Map` was utilized to represent the **adjacency list** inside the `graph` class
+- For `bfs`, a queue and a while loop did the trick, and a `Set` was crucial to prevent infinite looping 😎
 
 **Solution**:
 

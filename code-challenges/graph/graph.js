@@ -61,11 +61,37 @@ class Graph {
 
   getNeighbors(vertex) {
     // console.log(vertex);
-    return this.adjacencyList.get(vertex).length ? this.adjacencyList.get(vertex) : null;
+    return this.adjacencyList.get(vertex).length
+      ? this.adjacencyList.get(vertex)
+      : null;
   }
 
   size() {
     return this.adjacencyList.size;
+  }
+
+  bfs(start) {
+    // to prevent an infinite loop
+    const visited = new Set();
+
+    const queue = [start];
+
+    while (queue.length) {
+      const vertex = queue.shift();
+
+      const neighbors = this.adjacencyList.get(vertex);
+      console.log(neighbors);
+
+      for (const neighbor of neighbors) {
+        console.log(neighbor.vertex);
+        if (!visited.has(neighbor.vertex)) {
+          visited.add(neighbor.vertex);
+          queue.push(neighbor.vertex);
+        }
+      }
+    }
+
+    return [...visited];
   }
 }
 
@@ -100,6 +126,8 @@ class Graph {
 // console.log(g.getVertices());
 // console.log(g.getUniqueVertices());
 // console.log(g.getNeighbors(three));
+
+// console.log(g.bfs(zero));
 
 module.exports = {
   Graph,
