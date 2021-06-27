@@ -62,12 +62,14 @@ describe(':::: GRAPH ::::', () => {
     g.addVertex(two);
     g.addVertex(twoToo);
     g.addVertex(three);
+    g.addVertex(four);
+    g.addVertex(fourToo);
 
     // two smart ways to convert a Set to an Array
     // spreading
-    expect([...g.getUniqueVertices()]).toEqual([0, 1, 2, 3]);
+    expect([...g.getUniqueVertices()]).toEqual([0, 1, 2, 3, 4]);
     // Array.from()
-    expect(Array.from(g.getUniqueVertices())).toEqual([0, 1, 2, 3]);
+    expect(Array.from(g.getUniqueVertices())).toEqual([0, 1, 2, 3, 4]);
   });
 
   test('#getUniqueVertices() throws 🔴 if graph is empty', () => {

@@ -95,39 +95,39 @@ class Graph {
   }
 }
 
-const g = new Graph();
+// const g = new Graph();
 
-const zero = new Vertex(0);
-const one = new Vertex(1);
-const two = new Vertex(2);
-const twoToo = new Vertex(2);
-const three = new Vertex(3);
-const four = new Vertex(4);
-const fourToo = new Vertex(4);
-const five = new Vertex(5);
+// const zero = new Vertex(0);
+// const one = new Vertex(1);
+// const two = new Vertex(2);
+// const twoToo = new Vertex(2);
+// const three = new Vertex(3);
+// const four = new Vertex(4);
+// const fourToo = new Vertex(4);
+// const five = new Vertex(5);
 
-g.addVertex(zero);
-g.addVertex(one);
-g.addVertex(two);
-g.addVertex(twoToo);
-g.addVertex(three);
-g.addVertex(four);
-g.addVertex(fourToo);
-g.addVertex(five);
+// g.addVertex(zero);
+// g.addVertex(one);
+// g.addVertex(two);
+// g.addVertex(twoToo);
+// g.addVertex(three);
+// g.addVertex(four);
+// g.addVertex(fourToo);
+// g.addVertex(five);
 
-g.addDirectedEdge(zero, two);
-g.addDirectedEdge(two, three);
-g.addDirectedEdge(two, four);
-g.addDirectedEdge(three, five);
-g.addDirectedEdge(four, five);
-g.addDirectedEdge(one, three);
+// g.addDirectedEdge(zero, two);
+// g.addDirectedEdge(two, three);
+// g.addDirectedEdge(two, four);
+// g.addDirectedEdge(three, five);
+// g.addDirectedEdge(four, five);
+// g.addDirectedEdge(one, three);
 
-console.log(g.size());
-console.log(g.getVertices());
-console.log(g.getUniqueVertices());
-console.log(g.getNeighbors(three));
+// console.log(g.size());
+// console.log(g.getVertices());
+// console.log(g.getUniqueVertices());
+// console.log(g.getNeighbors(three));
 
-console.log(g.bfs(zero));
+// console.log(g.bfs(zero));
 
 module.exports = {
   Graph,
