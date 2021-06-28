@@ -39,5 +39,7 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 | 32  | treeIntersection          | [treeIntersection](./code-challenges/treeIntersection/README.md)   |
 | 33  | leftJoin                  | [leftJoin](./code-challenges/leftJoin/README.md)   |
 | 35  | graph                     | [graph](./code-challenges/graph/README.md)   |
+| 36  | graphBFS                  | [graphBFS](./code-challenges/graph/README.md)   |
+| 37  | graphBusinessTrip         | [graphBusinessTrip](./code-challenges/graph/README.md)   |
 
 
