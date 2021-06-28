@@ -80,10 +80,10 @@ class Graph {
       const vertex = queue.shift();
 
       const neighbors = this.adjacencyList.get(vertex);
-      console.log(neighbors);
+      // console.log(neighbors);
 
       for (const neighbor of neighbors) {
-        console.log(neighbor.vertex);
+        // console.log(neighbor.vertex);
         if (!visited.has(neighbor.vertex)) {
           visited.add(neighbor.vertex);
           queue.push(neighbor.vertex);
@@ -94,6 +94,103 @@ class Graph {
     return [...visited];
   }
 }
+
+// Determine whether the trip is possible with direct flights, and how much it would cost
+// Determine if the vertices are connected as a course, and the sum of the edges along the course
+/**
+ *
+ * @param {Graph} graph
+ * @param {Array} cities
+ */
+function businessTrip(graph, cities) {
+  let totalWeight = 0;
+  let isPossible = false;
+  let isPossibleArray = new Array(cities.length - 1).fill(false);
+  for (let i = 0; i < cities.length - 1; i++) {
+    let neighbors = graph.adjacencyList.get(cities[i]);
+
+    // if one vertex along the course does not have neighbors
+    // or is not connected to the next target vertex
+    if (!neighbors) {
+      totalWeight = 0;
+      isPossible = false;
+      break;
+    }
+
+    for (const neighbor of neighbors) {
+      if (neighbor.vertex === cities[i + 1]) {
+        isPossibleArray[i] = true;
+        totalWeight += neighbor.weight;
+      }
+    }
+  }
+
+  if (isPossibleArray.includes(false)) {
+    totalWeight = 0;
+    isPossible = false;
+  } else {
+    isPossible = true;
+  }
+
+  return `${isPossible}, $${totalWeight}`;
+}
+
+const g = new Graph();
+
+const cities = ['Metroville', 'Pandora'];
+const cities2 = ['Arendelle', 'Monstropolis', 'Naboo'];
+const cities3 = ['Naboo', 'Pandora'];
+const cities4 = ['Narnia', 'Arendelle', 'Naboo'];
+
+const Pandora = 'Pandora';
+const Metroville = 'Metroville';
+const Arendelle = 'Arendelle';
+const Monstropolis = 'Monstropolis';
+const Naboo = 'Naboo';
+const Narnia = 'Narnia';
+
+g.addVertex(Pandora);
+g.addVertex(Metroville);
+g.addVertex(Arendelle);
+g.addVertex(Monstropolis);
+g.addVertex(Naboo);
+g.addVertex(Narnia);
+
+g.addDirectedEdge(Pandora, Arendelle, 150);
+g.addDirectedEdge(Arendelle, Pandora, 150);
+
+g.addDirectedEdge(Pandora, Metroville, 82);
+g.addDirectedEdge(Metroville, Pandora, 82);
+
+g.addDirectedEdge(Arendelle, Metroville, 99);
+g.addDirectedEdge(Metroville, Arendelle, 99);
+
+g.addDirectedEdge(Arendelle, Monstropolis, 42);
+g.addDirectedEdge(Monstropolis, Arendelle, 42);
+
+g.addDirectedEdge(Metroville, Narnia, 37);
+g.addDirectedEdge(Narnia, Metroville, 37);
+
+g.addDirectedEdge(Metroville, Naboo, 26);
+g.addDirectedEdge(Naboo, Metroville, 26);
+
+g.addDirectedEdge(Metroville, Monstropolis, 105);
+g.addDirectedEdge(Monstropolis, Metroville, 105);
+
+g.addDirectedEdge(Monstropolis, Naboo, 73);
+g.addDirectedEdge(Naboo, Monstropolis, 73);
+
+g.addDirectedEdge(Naboo, Narnia, 250);
+g.addDirectedEdge(Narnia, Naboo, 250);
+
+console.log(businessTrip(g, cities));
+console.log(businessTrip(g, cities2));
+console.log(businessTrip(g, cities3));
+console.log(businessTrip(g, cities4));
+
+//------------------------------------------------\\
+//------------------------------------------------\\
+//------------------------------------------------\\
 
 // const g = new Graph();
 
@@ -122,6 +219,7 @@ class Graph {
 // g.addDirectedEdge(four, five);
 // g.addDirectedEdge(one, three);
 
+// console.log(g.adjacencyList.get(one));
 // console.log(g.size());
 // console.log(g.getVertices());
 // console.log(g.getUniqueVertices());
@@ -132,5 +230,6 @@ class Graph {
 module.exports = {
   Graph,
   Vertex,
-  Edge
+  Edge,
+  businessTrip
 };

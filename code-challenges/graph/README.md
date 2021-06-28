@@ -12,6 +12,7 @@
   - Extra methods:
     - getUniqueVertices()
   - bfs() -> or simply breadth-first traversal
+  - `businessTrip` function &rarr; returns if the course is connected or not (`boolean`), and the sum of the weight of the edges (trip cost)
 
 **Approach & Efficiency**: 
 - A separate `Vertex` and `Edge` class were created
