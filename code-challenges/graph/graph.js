@@ -80,10 +80,10 @@ class Graph {
       const vertex = queue.shift();
 
       const neighbors = this.adjacencyList.get(vertex);
-      console.log(neighbors);
+      // console.log(neighbors);
 
       for (const neighbor of neighbors) {
-        console.log(neighbor.vertex);
+        // console.log(neighbor.vertex);
         if (!visited.has(neighbor.vertex)) {
           visited.add(neighbor.vertex);
           queue.push(neighbor.vertex);
@@ -106,11 +106,9 @@ function businessTrip(graph, cities) {
   let totalWeight = 0;
   let isPossible = false;
   let isPossibleArray = new Array(cities.length - 1).fill(false);
-  console.log(isPossibleArray);
   for (let i = 0; i < cities.length - 1; i++) {
     let neighbors = graph.adjacencyList.get(cities[i]);
 
-    console.log(neighbors);
     // if one vertex along the course does not have neighbors
     // or is not connected to the next target vertex
     if (!neighbors) {
@@ -143,13 +141,6 @@ const cities = ['Metroville', 'Pandora'];
 const cities2 = ['Arendelle', 'Monstropolis', 'Naboo'];
 const cities3 = ['Naboo', 'Pandora'];
 const cities4 = ['Narnia', 'Arendelle', 'Naboo'];
-
-// const Pandora = new Vertex('Pandora');
-// const Metroville = new Vertex('Metroville');
-// const Arendelle = new Vertex('Arendelle');
-// const Monstropolis = new Vertex('Monstropolis');
-// const Naboo = new Vertex('Naboo');
-// const Narnia = new Vertex('Narnia');
 
 const Pandora = 'Pandora';
 const Metroville = 'Metroville';
@@ -197,6 +188,12 @@ console.log(businessTrip(g, cities2));
 console.log(businessTrip(g, cities3));
 console.log(businessTrip(g, cities4));
 
+//------------------------------------------------\\
+//------------------------------------------------\\
+//------------------------------------------------\\
+
+// const g = new Graph();
+
 // const zero = new Vertex(0);
 // const one = new Vertex(1);
 // const two = new Vertex(2);
@@ -233,5 +230,6 @@ console.log(businessTrip(g, cities4));
 module.exports = {
   Graph,
   Vertex,
-  Edge
+  Edge,
+  businessTrip
 };
