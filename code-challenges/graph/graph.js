@@ -93,6 +93,23 @@ class Graph {
 
     return [...visited];
   }
+
+
+  dfs(start, visited = new Set()) {
+
+    visited.add(start);
+
+    const destinations = this.adjacencyList.get(start);
+
+    for (const destination of destinations) {
+
+      if (!visited.has(destination.vertex)) {
+        this.dfs(destination.vertex, visited);
+      }
+    }
+
+    return [...visited];
+  }
 }
 
 // Determine whether the trip is possible with direct flights, and how much it would cost
@@ -187,6 +204,8 @@ console.log(businessTrip(g, cities));
 console.log(businessTrip(g, cities2));
 console.log(businessTrip(g, cities3));
 console.log(businessTrip(g, cities4));
+
+console.log(g.dfs('Pandora'))
 
 //------------------------------------------------\\
 //------------------------------------------------\\
