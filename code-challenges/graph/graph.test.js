@@ -144,7 +144,6 @@ describe(':::: GRAPH ::::', () => {
 });
 
 describe(':::: businessTrip ✈️ ::::', () => {
-  
   const cities = ['Metroville', 'Pandora'];
   const cities2 = ['Arendelle', 'Monstropolis', 'Naboo'];
   const cities3 = ['Naboo', 'Pandora'];
@@ -193,7 +192,6 @@ describe(':::: businessTrip ✈️ ::::', () => {
 
     g.addDirectedEdge(Naboo, Narnia, 250);
     g.addDirectedEdge(Narnia, Naboo, 250);
-
   });
 
   it('returns 🟢 true with pricing', () => {
@@ -204,5 +202,59 @@ describe(':::: businessTrip ✈️ ::::', () => {
   it('returns 🔴 false with big lonely 0 dollar!!!!', () => {
     expect(businessTrip(g, cities3)).toEqual('false, $0');
     expect(businessTrip(g, cities4)).toEqual('false, $0');
+  });
+});
+
+describe(':::: graphDFS ::::', () => {
+  const a = 'a';
+  const b = 'b';
+  const c = 'c';
+  const d = 'd';
+  const e = 'e';
+  const f = 'f';
+  const h = 'h';
+  const g = 'g';
+  let myGraph;
+  beforeEach(() => {
+    myGraph = new Graph();
+
+    myGraph.addVertex(a);
+    myGraph.addVertex(b);
+    myGraph.addVertex(c);
+    myGraph.addVertex(d);
+    myGraph.addVertex(e);
+    myGraph.addVertex(f);
+    myGraph.addVertex(h);
+    myGraph.addVertex(g);
+
+    myGraph.addDirectedEdge(a, b);
+    myGraph.addDirectedEdge(a, d);
+
+    myGraph.addDirectedEdge(b, c);
+    myGraph.addDirectedEdge(b, d);
+    myGraph.addDirectedEdge(b, a);
+
+    myGraph.addDirectedEdge(c, g);
+    myGraph.addDirectedEdge(c, b);
+
+    myGraph.addDirectedEdge(g, c);
+
+    myGraph.addDirectedEdge(d, a);
+    myGraph.addDirectedEdge(d, b);
+    myGraph.addDirectedEdge(d, e);
+    myGraph.addDirectedEdge(d, h);
+    myGraph.addDirectedEdge(d, f);
+
+    myGraph.addDirectedEdge(e, d);
+
+    myGraph.addDirectedEdge(h, f);
+    myGraph.addDirectedEdge(h, d);
+
+    myGraph.addDirectedEdge(f, d);
+    myGraph.addDirectedEdge(f, h);
+  });
+
+  it('returns 🟢 correct order', () => {
+    expect(myGraph.dfs(a)).toEqual(['a', 'b', 'c', 'g', 'd', 'e', 'h', 'f']);
   });
 });
